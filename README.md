@@ -1,6 +1,9 @@
 # dsh-cupbox
 
-把 [Cupbox](https://github.com/) 的核心能力（**DAG 工作流引擎 + 多模型协作**）从桌面应用里独立出来，做成一个 DeepSeek Harness 插件。没有 UI 框架依赖，宿主半边只用 `ctx.llm` / `ctx.tools` / `ctx.webServer`，客户端半边是一个独立的面板。
+[![release](https://img.shields.io/github/v/release/beizilaoshi/Cupbox-DSH-Test)](https://github.com/beizilaoshi/Cupbox-DSH-Test/releases)
+[![license](https://img.shields.io/github/license/beizilaoshi/Cupbox-DSH-Test)](https://github.com/beizilaoshi/Cupbox-DSH-Test/blob/main/LICENSE)
+
+把 Cupbox 的核心能力（**DAG 工作流引擎 + 多模型协作**）从桌面应用里独立出来，做成一个 DeepSeek Harness 插件。没有 UI 框架依赖，宿主半边只用 `ctx.llm` / `ctx.tools` / `ctx.webServer`，客户端半边是一个独立的面板。
 
 ## 它提供什么
 
@@ -29,10 +32,12 @@
 
 ## 安装
 
-在 DSH 里用插件管理器安装本目录：
+先克隆仓库，再在 DSH 里用插件管理器安装该目录：
 
-```
-plugin_manager install_bundle target=file:E:/CupboxDSH
+```powershell
+git clone https://github.com/beizilaoshi/Cupbox-DSH-Test.git E:/CupboxDSH
+# 然后在 DSH 里
+plugin_manager { action: 'install_bundle', target: 'file:E:/CupboxDSH' }
 ```
 
 安装后三条工具立即生效；面板随页面刷新出现。**改动源码后必须重装**（`remove_bundle` 再 `install_bundle`），因为 profile 里是目录拷贝而不是软链接。
