@@ -7,6 +7,8 @@
 
 ## 它提供什么
 
+![设置页 · 浅色](.preview/settings-light.png)
+
 | 能力 | 入口 | 说明 |
 | --- | --- | --- |
 | 工作流引擎 | 工具 `cupbox_run` | 有向无环图：`start` / `model` / `js` / `join` 四类节点，按依赖分层并行执行，节点间用 `{{input}}`、`{{vars.x}}`、`{{nodes.<id>}}` 传递数据 |
