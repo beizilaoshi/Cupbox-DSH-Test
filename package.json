@@ -1,0 +1,43 @@
+{
+  "name": "dsh-cupbox",
+  "version": "1.0.0",
+  "description": "Cupbox 工作流引擎与多模型协作进 DeepSeek Harness：DAG 工作流、并行/辩论式多模型团队、JS 变换节点，附 Web 面板 / Workflow DAG engine and multi-model collaboration for DeepSeek Harness",
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "workflow",
+    "multi-model",
+    "orchestration",
+    "cupbox"
+  ],
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "lib/engine.js",
+    "lib/store.js",
+    "assets/cupbox-logo.svg",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true
+    }
+  }
+}
